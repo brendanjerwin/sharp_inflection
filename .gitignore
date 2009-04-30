@@ -12,3 +12,4 @@ sources
 .eprj
 _ReSharper*
 ._*
+sharp_inflection/bin/Debug/*
