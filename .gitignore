@@ -1,0 +1,14 @@
+*.csproj.vspscc
+*.csproj.user
+*.vssscc
+obj
+makefile
+sources
+*.proj
+*.suo
+*.sln.cache
+*.vshost.exe
+*.vshost.exe.manifest
+.eprj
+_ReSharper*
+._*
