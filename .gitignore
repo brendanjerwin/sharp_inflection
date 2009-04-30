@@ -13,3 +13,5 @@ sources
 _ReSharper*
 ._*
 sharp_inflection/bin/Debug/*
+*.resharper.user
+specs/bin/Debug/*
