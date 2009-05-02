@@ -41,5 +41,28 @@ namespace SharpInflection
                 Assert.AreEqual(pair.Value, Inflector.camelize(pair.Key,false));
             }
         }
+
+        [Test]
+        public void TestCamelizeWithModule()
+        {
+            var CamelWithModuleToUnderscoreWithSlash = new Dictionary<string, string>
+                                                           {
+                                                               {"Admin::Product", "admin/product"},
+                                                               {
+                                                                   "Users::Commission::Department",
+                                                                   "users/commission/department"
+                                                                   },
+                                                               {
+                                                                   "UsersSection::CommissionDepartment",
+                                                                   "users_section/commission_department"
+                                                                   }
+                                                           };
+
+            foreach (var pair in CamelWithModuleToUnderscoreWithSlash)
+            {
+                Assert.AreEqual(pair.Key, Inflector.camelize(pair.Value));
+            }
+
+        }
     }
 }

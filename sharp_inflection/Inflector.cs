@@ -23,8 +23,8 @@ namespace SharpInflection
         {
             if(first_letter_in_uppercase)
             {
-                var with_expanded_paths = new Regex("/(.?)").Replace(lower_case_and_underscored_word,
-                                                            m => string.Format("::{0}", m.Value.ToUpper()));
+                var with_expanded_paths = new Regex("/(?<letter>.)").Replace(lower_case_and_underscored_word,
+                                                            m => string.Format("::{0}", m.Groups["letter"].Value.ToUpper()));
                 return new Regex("(^|_)(?<letter>.)").Replace(with_expanded_paths, m => m.Groups["letter"].Value.ToUpper());
             }
 
