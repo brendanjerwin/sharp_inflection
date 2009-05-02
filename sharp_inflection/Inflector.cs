@@ -27,8 +27,9 @@ namespace SharpInflection
                                                             m => string.Format("::{0}", m.Value.ToUpper()));
                 return new Regex("(^|_)(?<letter>.)").Replace(with_expanded_paths, m => m.Groups["letter"].Value.ToUpper());
             }
-               
-            return lower_case_and_underscored_word.ToCharArray().First().ToString().ToLower() + camelize(lower_case_and_underscored_word).Substring(1,lower_case_and_underscored_word.Length-1);
+
+            var camelized = camelize(lower_case_and_underscored_word);
+            return camelized.ToCharArray().First().ToString().ToLower() + camelized.Substring(1,camelized.Length-1);
         }
 
         public static string camelize(string lower_case_and_underscored_word)
